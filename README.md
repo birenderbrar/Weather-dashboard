@@ -7,14 +7,13 @@ I have used ELK stack to store and monitor weather data streamed by python from 
 * Everything is happening in real-time. 
 # App working 
 * Following is the flow of the app.
-   ![](weather%20app/images/index.png)
+   ![](Weather_dashboard/images/workflow.png)
    
 * First of all, we need elastic search and Kibana servers up and running. 
 * The next step is to configure the Logstash, by providing relevant input, filter, and output, according to your need.
 * Next run the python script
 * Finally configure the index in Kibana and make the visualization and dashboard like below.
-
-  ![](circuit.png)
+    ![](Weather_dashboard/images/dashboard.png)
   
 
 # Important 
