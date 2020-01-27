@@ -14,7 +14,7 @@ with open('weather.csv','a') as out_file:
     if not file_exists:
     	writer.writerow(["Temprature","Humidity","City","Country","Weather_description","Coordinates"])
     while True:
-    	time.sleep(2)
+    	time.sleep(4) # change the according to your logging frequency 
     	for i in weather_data: 
 	    	temprature,humidity = float(i['main']['temp']),float(i['main']['humidity'])
 	    	city_name,country = i['name'],i['sys']['country']
