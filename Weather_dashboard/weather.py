@@ -1,7 +1,8 @@
-import requests
 import time
 import csv
 import os.path
+import requests
+
 
 r = requests.get('https://api.openweathermap.org/data/2.5/group?id=2172517,4140963,1273293,524901,3369157,108410&appid="your api key"')
 json_object = r.json()
@@ -16,10 +17,10 @@ with open('weather.csv','a') as out_file:
     while True:
     	time.sleep(4) # change the according to your logging frequency 
     	for i in weather_data: 
-	    	temprature,humidity = float(i['main']['temp']),float(i['main']['humidity'])
-	    	city_name,country = i['name'],i['sys']['country']
+	    	temprature,humidity = float(i['main']['temp']), float(i['main']['humidity'])
+	    	city_name,country = i['name'], i['sys']['country']
 	    	description = i['weather'][0]['description']
-	    	lat,lon= str(i['coord']['lat']),str(i['coord']['lon'])
-	    	coordinates=lat+","+lon
+	    	lat,lon= str(i['coord']['lat']), str(i['coord']['lon'])
+	    	coordinates=lat + "," + lon
 	    	rows = [temprature,humidity,city_name,country,description,coordinates]
 	    	writer.writerow(rows)
